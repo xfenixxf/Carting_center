@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Техобслуживание — Картинг-центр</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../js/auth.js"></script>
+<script>requireAuth(['mechanic', 'admin'])</script>
+<nav id="mainNav"></nav>
+
+    <h1>Журнал ТО</h1>
+
+    <div>
+        <button type="button" id="addBtn">Добавить запись</button>
+        <button type="button" id="editBtn">Изменить</button>
+        <button type="button" id="deleteBtn">Удалить</button>
+    </div>
+
+    <div>
+        <input type="text" id="searchInput" placeholder="Поиск по карту, типу ТО или мастеру...">
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Карт</th>
+                <th>Тип ТО</th>
+                <th>Мастер</th>
+                <th>Дата</th>
+                <th>Статус</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody id="maintenanceBody"></tbody>
+    </table>
+    <script src="../js/api.js"></script>
+    <script src="../js/modalwindow.js"></script>
+    <script src="../js/maintenance.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Типы картов — Картинг-центр</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../js/auth.js"></script>
+    <script>requireAuth(['mechanic', 'admin']);</script>
+    <nav id="mainNav"></nav>
+
+    <h1>Типы картов</h1>
+
+    <div>
+        <button type="button" id="addBtn">Добавить</button>
+        <button type="button" id="editBtn">Изменить</button>
+        <button type="button" id="deleteBtn">Удалить</button>
+    </div>
+
+    <div>
+        <input type="text" id="searchInput" placeholder="Поиск по названию...">
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Цена за заезд</th>
+            </tr>
+        </thead>
+        <tbody id="cartTypesBody"></tbody>
+    </table>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/modalwindow.js"></script>
+    <script src="../js/cartTypes.js"></script>
+</body>
+</html>

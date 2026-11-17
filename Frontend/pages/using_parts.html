@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Используемые запчасти — Картинг-центр</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../js/auth.js"></script>
+    <script>requireAuth(['mechanic', 'admin']);</script>
+    <nav id="mainNav"></nav>
+
+    <h1>Используемые запчасти</h1>
+
+    <div>
+        <button type="button" id="addBtn">Списать запчасть</button>
+        <button type="button" id="deleteBtn">Отменить списание</button>
+    </div>
+
+    <div>
+        <input type="text" id="searchInput" placeholder="Поиск по названию запчасти...">
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Запчасть</th>
+                <th>ТО (ID)</th>
+                <th>Количество</th>
+            </tr>
+        </thead>
+        <tbody id="usingPartsBody"></tbody>
+    </table>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/modalwindow.js"></script>
+    <script src="../js/usingParts.js"></script>
+</body>
+</html>

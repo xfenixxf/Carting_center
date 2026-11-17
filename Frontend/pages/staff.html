@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудники — Картинг-центр</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../js/auth.js"></script>
+<script>requireAuth(['admin'])</script>
+<nav id="mainNav"></nav>
+
+    <h1>Сотрудники</h1>
+
+    <div>
+        <button type="button" id="addBtn">Добавить</button>
+        <button type="button" id="editBtn">Изменить</button>
+        <button type="button" id="deleteBtn">Удалить</button>
+    </div>
+
+    <div>
+        <input type="text" id="searchInput" placeholder="Поиск по ФИО, email или роли...">
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ФИО</th>
+                <th>Email</th>
+                <th>Роль</th>
+            </tr>
+        </thead>
+        <tbody id="staffBody"></tbody>
+    </table>
+    <script src="../js/api.js"></script>
+    <script src="../js/modalwindow.js"></script>
+    <script src="../js/staff.js"></script>
+</body>
+</html>

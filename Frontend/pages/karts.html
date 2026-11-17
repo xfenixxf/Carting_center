@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карты — Картинг-центр</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../js/auth.js"></script>
+<script>requireAuth(['mechanic', 'admin'])</script>
+<nav id="mainNav"></nav>
+
+    <h1>Карты</h1>
+
+    <div>
+        <button type="button" id="addBtn">Добавить</button>
+        <button type="button" id="editBtn">Изменить</button>
+        <button type="button" id="deleteBtn">Удалить</button>
+    </div>
+
+    <div>
+        <input type="text" id="searchInput" placeholder="Поиск по названию...">
+    </div>
+
+    <div id="kartsGrid"></div>
+    <script src="../js/api.js"></script>
+    <script src="../js/modalwindow.js"></script>
+    <script src="../js/Karts.js"></script>
+</body>
+</html>

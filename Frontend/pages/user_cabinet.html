@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../js/auth.js"></script>
+    <script>requireAuth(['user']);</script>
+    <nav id="mainNav"></nav>
+
+    <h1>Личный кабинет</h1>
+    <p id="welcome"></p>
+    <h2>Мои записи на заезды</h2>
+    <div id="myRides"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/modalwindow.js"></script>
+    <script src="../js/user_cabinet.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Заезды — Картинг-центр</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../js/auth.js"></script>
+<script>requireAuth(['manager', 'admin'])</script>
+<nav id="mainNav"></nav>
+
+    <h1>Заезды</h1>
+
+    <div>
+        <button type="button" id="addBtn">Добавить</button>
+        <button type="button" id="editBtn">Изменить</button>
+        <button type="button" id="deleteBtn">Удалить</button>
+    </div>
+
+    <div>
+        <label for="dateFilter">Фильтр по дате:</label>
+        <input type="date" id="dateFilter">
+        <button type="button" id="clearDateFilter">Сбросить</button>
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Дата</th>
+                <th>Время</th>
+                <th>Локация</th>
+                <th>Длительность</th>
+                <th>Макс. участников</th>
+                <th>Статус</th>
+                <th>Сумма</th>
+</tr>
+        </thead>
+        <tbody id="ridesBody"></tbody>
+    </table>
+    <script src="../js/api.js"></script>
+    <script src="../js/modalwindow.js"></script>
+    <script src="../js/rides.js"></script>
+</body>
+</html>

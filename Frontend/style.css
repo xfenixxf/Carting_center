@@ -1,0 +1,368 @@
+/* ============ Базовые настройки ============ */
+* { box-sizing: border-box; }
+
+:root {
+    --bg: #f4f6f9;
+    --surface: #ffffff;
+    --border: #dfe3e8;
+    --text: #1f2933;
+    --muted: #6b7280;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --danger: #dc2626;
+    --danger-hover: #b91c1c;
+    --success: #16a34a;
+    --radius: 8px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ============ Навигация ============ */
+#mainNav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#mainNav a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: var(--radius);
+    transition: background 0.15s;
+}
+
+#mainNav a:hover {
+    background: var(--bg);
+    color: var(--primary);
+}
+
+#mainNav > span {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+#mainNav button {
+    background: var(--danger);
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#mainNav button:hover {
+    background: var(--danger-hover);
+}
+
+/* ============ Заголовки и контейнер ============ */
+body > h1,
+body > h2 {
+    padding: 0 24px;
+    margin-top: 24px;
+}
+
+body > div,
+body > table,
+body > form {
+    margin: 0 24px 16px;
+}
+
+/* ============ Кнопки-действия ============ */
+button {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.15s, border 0.15s;
+}
+
+button:hover {
+    border-color: var(--primary);
+}
+
+button#addBtn {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+button#addBtn:hover {
+    background: var(--primary-hover);
+}
+
+button#editBtn {
+    background: #fbbf24;
+    border-color: #f59e0b;
+    color: #422006;
+}
+
+button#deleteBtn {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: #fff;
+}
+
+button#deleteBtn:hover {
+    background: var(--danger-hover);
+}
+
+/* ============ Поля ввода ============ */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    transition: border 0.15s, box-shadow 0.15s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 12px;
+}
+
+/* ============ Таблицы ============ */
+table {
+    width: calc(100% - 48px);
+    border-collapse: collapse;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+table thead {
+    background: #f1f5f9;
+}
+
+table th {
+    text-align: left;
+    padding: 12px 14px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+}
+
+table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+table tbody tr:hover {
+    background: #f9fafb;
+}
+
+table tbody tr.selected {
+    background: #dbeafe;
+}
+
+/* ============ Карточки (grid-страницы: karts, cart-types) ============ */
+#kartsGrid,
+#cartTypesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    padding: 0 24px 24px;
+}
+
+#kartsGrid > div,
+#cartTypesGrid > div {
+    background: var(--surface);
+    padding: 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+#kartsGrid b,
+#cartTypesGrid b {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--primary);
+}
+
+/* ============ Модальные окна ============ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+.modal {
+    background: var(--surface);
+    padding: 24px;
+    border-radius: var(--radius);
+    min-width: 400px;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.modal label {
+    display: block;
+    margin: 10px 0 4px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.modal input,
+.modal select,
+.modal textarea {
+    width: 100%;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.modal-actions button {
+    margin-left: 8px;
+    padding: 8px 18px;
+}
+
+#modalSave {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+#modalSave:hover {
+    background: var(--primary-hover);
+}
+
+.modal-error {
+    color: var(--danger);
+    margin-top: 10px;
+    min-height: 1em;
+    font-size: 14px;
+}
+
+/* ============ Страница логина ============ */
+#loginForm, #regForm {
+    max-width: 400px;
+    margin: 60px auto;
+    background: var(--surface);
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+#loginForm > div, #regForm > div {
+    margin-bottom: 14px;
+}
+
+#loginForm label, #regForm label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+#loginForm input, #loginForm select,
+#regForm input {
+    width: 100%;
+}
+
+#loginForm button, #regForm button {
+    width: 100%;
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    padding: 10px;
+    margin-top: 8px;
+}
+
+#loginForm button:hover, #regForm button:hover {
+    background: var(--primary-hover);
+}
+
+/* ============ Статусы ============ */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-green { background: #dcfce7; color: #166534; }
+.badge-red   { background: #fee2e2; color: #991b1b; }
+.badge-gray  { background: #e5e7eb; color: #374151; }
+
+/* ============ Адаптив ============ */
+@media (max-width: 700px) {
+    #mainNav { flex-direction: column; align-items: flex-start; }
+    #mainNav > span { margin-left: 0; }
+    table { width: calc(100% - 32px); }
+    body > div, body > table { margin: 0 16px 16px; }
+    .modal { min-width: auto; width: 92%; }
+}
+.error-message {
+    color: var(--danger);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 12px;
+    min-height: 20px;
+}

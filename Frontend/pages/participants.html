@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Участие — Картинг-центр</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../js/auth.js"></script>
+    <script>requireAuth(['manager', 'admin'])</script>
+    <nav id="mainNav"></nav>
+
+    <h1>Участие в заездах</h1>
+
+    <div>
+        <button type="button" id="addBtn">Записать участника</button>
+        <button type="button" id="deleteBtn">Удалить</button>
+    </div>
+
+    <div>
+        <input type="text" id="searchInput" placeholder="Поиск по участнику, команде или карту...">
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+    <th>ID</th><th>Пользователь</th><th>Команда</th>
+    <th>Заезд</th><th>Карт</th><th>Дата</th><th>Статус</th>
+</tr>
+        </thead>
+        <tbody id="participantsBody"></tbody>
+    </table>
+    <script src="../js/api.js"></script>
+    <script src="../js/modalwindow.js"></script>
+    <script src="../js/participants.js"></script>
+</body>
+</html>

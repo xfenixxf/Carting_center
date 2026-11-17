@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Локации — Картинг-центр</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../js/auth.js"></script>
+<script>requireAuth(['admin'])</script>
+<nav id="mainNav"></nav>
+
+    <h1>Локации</h1>
+
+    <div>
+        <button type="button" id="addBtn">Добавить</button>
+        <button type="button" id="editBtn">Изменить</button>
+        <button type="button" id="deleteBtn">Удалить</button>
+    </div>
+
+    <div>
+        <input type="text" id="searchInput" placeholder="Поиск по названию или адресу...">
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Адрес</th>
+                <th>Длина</th>
+            </tr>
+        </thead>
+        <tbody id="locationsBody"></tbody>
+    </table>
+    <script src="../js/api.js"></script>
+    <script src="../js/modalwindow.js"></script>
+    <script src="../js/locations.js"></script>
+</body>
+</html>
